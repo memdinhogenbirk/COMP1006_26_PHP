@@ -1,3 +1,5 @@
+<?php
+declare(strict_types=1);
 //1. Set Up & Start 
 
 
@@ -8,8 +10,7 @@
 */
 
 //3. Variables, Data Tyoes, Concatenation, Conditional Statements & Echo
-<?php
-declare(strict_types=1);
+
 
 
 $firstName = "Michael";
@@ -27,9 +28,9 @@ else {
 }
 //4. Loosely Typed Language Demo
 $num1 = 1; //int
-$num2 = "2";   // string
+$num2 = 2;   // string
 
-function add(int $num1, int $num2) : int {
+function add($num1, $num2) {
     return $num1 + $num2;
 }
 
