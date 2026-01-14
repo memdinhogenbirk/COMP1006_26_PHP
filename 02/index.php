@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+// require_once "connect.php";
 //1. Set Up & Start 
 
 
@@ -28,7 +29,7 @@ else {
 }
 //4. Loosely Typed Language Demo
 $num1 = 1; //int
-$num2 = 2;   // string
+$num2 = 2;
 
 function add($num1, $num2) {
     return $num1 + $num2;
