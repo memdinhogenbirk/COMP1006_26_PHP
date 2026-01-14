@@ -39,5 +39,31 @@ echo "<p>The sum is: " . add($num1, $num2) . "</p>";
 //5. Strict Types & Types Hints
 
 
-//6. OOP with PHP 
+//6. OOP with PHP
+class Person {
+    public string $name;
+    public int $age;
+    public bool $isInstructor;
+
+    public function __construct(string $name, int $age, bool $isInstructor)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->isInstructor = $isInstructor;
+    }
+
+    public function getBadge(): string
+    {
+        $role = $this->isInstructor ? "Instructor" : "Student";
+        return "Name :  {$this->name} | Age: {$this->age} | Role : $role";
+    }
+}
+
+//create an instance of object 
+
+$person = new Person("Jessica", 40, true);
+
+//use the object 
+
+echo $person->getBadge();
 ?>
