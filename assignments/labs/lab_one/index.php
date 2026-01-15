@@ -1,10 +1,9 @@
 <?php 
     declare(strict_types=1);
-    //Use include/require to include this code in index.php. 
     require_once "connect.php";
     require "header.php";//header goes at the top 
     echo "<p> Follow the instructions outlined in instructions.txt to complete this lab. Good luck & have fun!😀 </p>";
-    
+    //Use include/require to include this code in index.php. 
     include "car.php";//include or require seem fine here. I suppose it comes down to whether you want a fatal error if the file is missing. I don't so I'm using include.
     //Instantiate a new instance of a car object and echo the car information in the browser
     $myCar = new Car("Toyota", "Camry", 2020);//can make as many instances as I want, each time it will call the constructor, and spit out some html formatted info.
