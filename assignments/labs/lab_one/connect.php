@@ -14,6 +14,7 @@ so it would be editable when using the config in the xampp terminal
 I also had to manually add in $cfg['Servers'][$i]['port'] = '3307'; to the config.inc.php file in phpmyadmin folder to fully get this working.
 
 Without these changes, I could not even access my local server through phpmyadmin, let alone get this assignment working.
+And by golly, it's working.
 */
 
 try {//try and catch as you showed us, unchanged. Catches any errors connecting to the database.

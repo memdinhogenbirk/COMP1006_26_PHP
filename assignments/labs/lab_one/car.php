@@ -7,16 +7,20 @@
         public string $model;//model is also a word or word + numbers, therefore string data type
         public int $year;//year is a number, therefore integer data type, though technically makes no difference here unless you were using said number in calculations.
 
+        private static int $carCount = 0;//want headers to say vehicle 1, vehicle 2, etc. for each class instance. Doesn't need to be public, only used in the class itself.
+
         public function __construct(string $make, string $model, int $year)
         {
+            self::$carCount++;//increment car count each time a new instance is created (googled how to increment a counter each time a new object is made, "self" is apparently how. Please feel free to elaborate on what exactly this is for I do not know, but it works. Stack overflow says to use it for static properties/methods, so that's what I'm doing.)
             $this->make = $make;//make property assigned from constructor parameter
             $this->model = $model;//etc
             $this->year = $year;//etc
         }
         public function getCarInfo(): string //method to return car information as a string
         {
-            return "<h3>Vehicle 1</h3><p><b>Car Make:</b> {$this->make}</p><p><b>Model:</b> {$this->model}</p><p><b>Year:</b> {$this->year}</p>";
-            //calls the properties and places them in a paragraph to allow multiple cars to be displayed neatly.
+            $carInstanceIncrementer = self::$carCount;//incrementing local variable to be used in the return string
+            return "<h3>Vehicle {$carInstanceIncrementer}</h3><p><b>Car Make:</b> {$this->make}</p><p><b>Model:</b> {$this->model}</p><p><b>Year:</b> {$this->year}</p>";
+            //calls the properties of the class and formats them in HTML for a tidy output
         }
     }
 
