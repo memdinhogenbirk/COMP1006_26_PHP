@@ -29,6 +29,8 @@
     
     Out of my own fruition, I elected to create an incrementing vehicle number header for each car instance created. I had the idea, decided to figure out
     how to do it. The internet is a wonderfull thing. See car.php comments for more details on that.
+
+    TLDR: Getting database working === pain in butt, rest of lab === familiar territory.
     ---------------------------------------------------------------------------------------------------------------------------------------------------
     */
 ?> 
