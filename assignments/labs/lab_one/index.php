@@ -8,7 +8,7 @@
     //Instantiate a new instance of a car object and echo the car information in the browser
     $myCar = new Car("Toyota", "Camry", 2020);//can make as many instances as I want, each time it will call the constructor, and spit out some html formatted info.
     //Uses the strings typed here as data for the constructor to format, order matters.
-    echo $myCar->getCarInfo();
+    echo $myCar->getCarInfo();//calls the method for this instanced object. Repeated thrice for good measure.
     $myCar = new Car("Ford", "Mustang", 1969);
     echo $myCar->getCarInfo();
     $myCar = new Car("Honda", "Civic", 2015);
