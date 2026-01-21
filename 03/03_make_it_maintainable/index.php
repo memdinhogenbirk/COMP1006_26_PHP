@@ -20,16 +20,17 @@
 <!DOCTYPE html>
 <html>
 <?php include "includes/head.php"; ?>
+
 <body>
 
-<h1>Welcome</h1>
+    <h1>Welcome</h1>
 
-<?php 
-    // Display items
+    <?php
     include "includes/Items.php";
     Items::displayItems();
-?>
-<?php include "includes/footer.php"; ?>
+    ?>
+    <?php include "includes/footer.php"; ?>
 
 </body>
+
 </html>
