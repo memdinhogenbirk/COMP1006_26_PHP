@@ -19,8 +19,8 @@
 
 <!DOCTYPE html>
 <html>
-<?php include "includes/head.php"; ?>
-
+<head><?php include "includes/head.php"; ?></head>
+    <!--The head element often contains duplicate syntax that is the same on every page. In this particular scenario, the one element that is in it is one that may be subject to change depending on the page being viewed. So with that being said, this is for demonstrative purposes only. In reality, the title would remain on this page, and everything else contained in the head would go inside the head.php file.-->
 <body>
 
     <h1>Welcome</h1>
@@ -28,9 +28,10 @@
     <?php
     include "includes/Items.php";
     Items::displayItems();
+    //Using the displayItems method from the Items class to output the list of items, making the list updatable and transferable to other pages without retyping the whole thing. Makes sense especially in the context of a navigation menu, where the links may change. See Items.php for more details.
     ?>
     <?php include "includes/footer.php"; ?>
-
+    <!--Footers tend to remain identical regardless of the page they are on, so including the entire element in it's own file makes sense.-->
 </body>
 
 </html>
