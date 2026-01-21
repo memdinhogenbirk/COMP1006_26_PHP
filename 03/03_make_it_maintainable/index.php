@@ -11,6 +11,7 @@
     <?php endforeach; ?>
     </ul>
     $items = ["Home", "About", "Contact"];
+    I just moved these here in case I screwed up syntax and needed to reference them
 */
 
 
@@ -35,3 +36,4 @@
 </body>
 
 </html>
+    <!--elements that remain on this page are ones that are seldom to change and be unique to a specific page. -->
