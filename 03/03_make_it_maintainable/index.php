@@ -5,30 +5,31 @@
     - Repetition will become a problem
 
     How can we refactor this code so it’s easier to maintain?
+    <ul>
+    <?php foreach ($items as $item): ?>
+    <li><?= $item ?></li>
+    <?php endforeach; ?>
+    </ul>
+    $items = ["Home", "About", "Contact"];
 */
 
-$items = ["Home", "About", "Contact"];
+
 
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My PHP Page</title>
-</head>
+<?php include "includes/head.php"; ?>
 <body>
 
 <h1>Welcome</h1>
 
-<ul>
-<?php foreach ($items as $item): ?>
-    <li><?= $item ?></li>
-<?php endforeach; ?>
-</ul>
-
-<footer>
-    <p>&copy; 2026</p>
-</footer>
+<?php 
+    // Display items
+    include "includes/Items.php";
+    Items::displayItems();
+?>
+<?php include "includes/footer.php"; ?>
 
 </body>
 </html>
