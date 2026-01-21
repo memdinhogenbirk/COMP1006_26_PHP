@@ -36,4 +36,4 @@
 </body>
 
 </html>
-    <!--elements that remain on this page are ones that are seldom to change and be unique to a specific page. -->
+    <!--Elements that remain on this page are ones that are seldom to change and be unique to a specific page. -->
