@@ -18,6 +18,7 @@ p,
 fieldset,
 legend {
     margin: 0;
+    
 }
 
 /* Base body styles */
@@ -56,16 +57,31 @@ h1 img {
 /* ============================
    Form Elements
    ============================ */
-
+form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c5c4c4
+}
+div {
+    display: flex;
+    justify-content: center;
+}
 fieldset {
-    border: 1px solid #ddd;
+    border: 1px solid #c5c4c4;
     padding: 1rem;
     margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 60%;
+}
+fieldset:first-of-type{
+    width: 40%;
 }
 
 legend {
     padding: 0 0.5rem;
     font-weight: 600;
+    margin: auto;
 }
 
 label {
@@ -79,6 +95,9 @@ button {
     display:block;
     font-family: inherit;
     font-size: 1rem;
+}
+button{
+    margin: .5rem;
 }
 
 input,
