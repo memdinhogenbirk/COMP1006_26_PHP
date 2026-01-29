@@ -59,7 +59,7 @@
                     $message = "Thank you for your comments " . htmlspecialchars($_POST['first_name']) . " " . htmlspecialchars($_POST['last_name']) . "!\n\n";
                     $message .= "We have received the following message: \n" . $userMessage . "\n";
                     $message .= "Your thoughts are important to us!\nWe will respond in 2-3 business days.\nThank you,\nBake It Till You Make It Bakery";
-            // if(mail($to, $subject, $message)) { <-- this has been commented out to allow the rest of the php to run.
+            // if(mail($to, $subject, $message, $headers)) { <-- this has been commented out to allow the rest of the php to run.
             //With a functional live server, this would allow an email to be sent to the input address, and would trigger the rest of the php.
                 if (!empty($errors)){
                     echo "<h1>Submission requirements not met</h1>";
