@@ -7,7 +7,7 @@ $password = ""; //password
 //points to the database
 $dsn = "mysql:host=$host;dbname=$db;port=3307";
 
-//try to connect, if connected echo a yay!
+//try to connect, if connected, proceed, if not, catch the error and display message
 try {
    $pdo = new PDO ($dsn, $user, $password); 
    $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
