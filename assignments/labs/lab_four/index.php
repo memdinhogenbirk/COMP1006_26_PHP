@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMP1006 - Lab Four</title>
+    <title>Lab 4 Form</title>
 </head>
 
 <?php include 'includes/header.php'; ?><!--using header and styles from lesson to make it look presentable-->
