@@ -7,7 +7,7 @@
     <title>COMP1006 - Lab Four</title>
 </head>
 
-<body>
+<?php include 'includes/header.php'; ?><!--using header and styles from lesson to make it look presentable-->
 
     <main class="container mt-4">
         <h1>Subscribe to Our Mailing List</h1>
@@ -29,6 +29,7 @@
             <a href="subscribers.php">View Subscribers</a>
         </p>
     </main>
+    <?php include 'includes/footer.php'; ?><!--using footer from lesson to make it look presentable-->
 </body>
 
 </html>
