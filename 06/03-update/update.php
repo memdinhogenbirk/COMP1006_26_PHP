@@ -19,7 +19,7 @@ if (!isset($_GET['id'])) {
   die("No order ID provided.");
 }
 
-$customerId = $_GET['id'];
+$customerId = $_GET['id'];//gets ID from url
 
 /* -------------------------------------------
    STEP 2: If form is submitted, UPDATE the row
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($firstName === '' || $lastName === '' || $email === '') {
     $error = "First name, last name, and email are required.";
   } else {
-
+    //sql query that updates in a similar syntax pattern to INSERT INTO. Assign columns to named placeholders
     $sql = "UPDATE orders1
             SET first_name = :first_name,
                 last_name = :last_name,
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 procrastination_cookie = :procrastination_cookie
             WHERE customer_id = :customer_id";
 
-    $stmt = $pdo->prepare($sql);
+    $stmt = $pdo->prepare($sql);//prepare the statement
 
     // Bind parameters (safe + beginner friendly)
     $stmt->bindParam(':first_name', $firstName);
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 /* -------------------------------------------
    STEP 3: Load existing order data (to echo in the form)
 -------------------------------------------- */
-$sql = "SELECT * FROM orders1 WHERE customer_id = :customer_id";
+$sql = "SELECT * FROM orders1 WHERE customer_id = :customer_id";//use url appended ID to find specific row
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':customer_id', $customerId);
 $stmt->execute();

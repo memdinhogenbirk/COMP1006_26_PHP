@@ -10,10 +10,10 @@ require "includes/header.php";
 require "includes/connect.php";
 
 // Get all orders (newest first)
-$sql = "SELECT * FROM orders1 ORDER BY created_at DESC";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$orders = $stmt->fetchAll();
+$sql = "SELECT * FROM orders1 ORDER BY created_at DESC";//query to select all columns from table orders1, order by descending
+$stmt = $pdo->prepare($sql);//prepare sql query
+$stmt->execute();//execute the query
+$orders = $stmt->fetchAll();//fetch all data from the query into variable $orders
 ?>
 
 <main class="mt-4">
@@ -79,7 +79,7 @@ $orders = $stmt->fetchAll();
                 <a
                   class="btn btn-sm btn-warning"
                   href="update.php?id=<?= urlencode($order['customer_id']); ?>"
-                >
+                ><!--appends href url with customer id number-->
                   Update
                 </a>
               </td>
