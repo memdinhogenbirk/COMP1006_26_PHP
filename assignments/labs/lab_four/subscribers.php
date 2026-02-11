@@ -5,7 +5,7 @@ require "includes/connect.php";
 
   //TODO:
   //1. Write a SELECT query to get all subscribers
-  $sql = "SELECT * FROM subscribers ORDER BY subscribed_at DESC";//presumably you'll teach this in class this week but this is what google said to do, the syntax is familiar thanks to relational databases class. * is everything, from subscribers table, ordered by most recent subscription date first (descending order)
+  $sql = "SELECT * FROM subscribers ORDER BY subscribed_at DESC";//selecting all from subscribers table, ordering rows descending
   //2. Add ORDER BY subscribed_at DESC
   //3. Prepare the statement
   $stmt = $pdo->prepare($sql);//same as prepare statement in process.php, but this time it's preparing the select statement instead of the insert statement
