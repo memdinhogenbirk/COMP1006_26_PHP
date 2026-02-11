@@ -12,7 +12,7 @@ require "includes/connect.php";
   //4. Execute the statement
   $stmt->execute();
   //5. Fetch all results into $subscribers
-  $subscribers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $subscribers = $stmt->fetchAll();//i guess I don't need PDO::FETCH_ASSOC as the internet hath suggested
   $pdo = null;
 ?>
 <?php include 'includes/header.php'; ?><!--using header and styles from lesson to make it look presentable-->
