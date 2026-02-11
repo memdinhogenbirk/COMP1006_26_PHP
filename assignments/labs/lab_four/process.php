@@ -16,6 +16,7 @@
     $stmt ->bindParam(':email', $email);
     $stmt->execute([':first_name' => $firstName, ':last_name' => $lastName, ':email' => $email]);//executing said list of values as array
 
+    $pdo = null;//close connection
 ?>
 
 <?php include 'includes/header.php'; ?><!--using header and styles from lesson to make it look presentable-->
