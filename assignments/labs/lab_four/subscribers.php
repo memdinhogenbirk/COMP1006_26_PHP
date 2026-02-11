@@ -13,7 +13,7 @@ require "includes/connect.php";
   $stmt->execute();
   //5. Fetch all results into $subscribers
   $subscribers = $stmt->fetchAll();//i guess I don't need PDO::FETCH_ASSOC as the internet hath suggested
-  $pdo = null;
+  $pdo = null;//assuming this is good practice from todays lesson
 ?>
 <?php include 'includes/header.php'; ?><!--using header and styles from lesson to make it look presentable-->
   <main class="container mt-4">
