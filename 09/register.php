@@ -72,19 +72,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
 
         // SQL query to check for existing username or email
-       
-
+        $sql = "SELECT id FROM users where username = :username OR email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':username' => $username, ':email' => $email]);
+        $user = $stmt->fetch();
         // Prepare the SQL statement using PDO
- 
-
         // Bind user inputs to the query parameters
-   
-
         // Execute the query
-  
-
         // If a record is returned, the username or email is already in use
-     
+        if($stmt->fetch()){
+            $errors[] = 'already in use';
+        }
     }
     // --------------------------------------------------
     // Insert the new user into the database
@@ -95,22 +93,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Hash the password before storing it in the database
         // This ensures passwords are not stored in plain text
-       ;
-
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         // SQL query to insert the new user
-  
-
+        $sql = "INSERT INTO users (username,email, password)
+                VALUES (:username, :email, :password)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':username' => $username, ':email' => $email, ':password' => $hashedPassword]);
         // Prepare the insert statement
-       
-
         // Bind the values to the query parameters
-       
-
         // Execute the insert query
-   
-
         // Set a success message
-    
+        $success = 'Account created successfully';
     }
 }
 ?>

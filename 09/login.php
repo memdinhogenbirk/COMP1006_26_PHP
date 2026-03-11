@@ -1,7 +1,7 @@
 <?php
 // Start or resume the session.
 // Sessions allow us to store login information across multiple pages.
-
+session_start();
 
 require "includes/connect.php";
 require "includes/header.php";
@@ -30,19 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // SQL query to find a user with the matching username OR email
         // LIMIT 1 ensures only one user record is returned
-        
-
+        $sql = 'SELECT id, username, email, password FROM users WHERE username = :login OR email = :login LIMIT 1';
         // Prepare the SQL statement using PDO
-     
-
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':login', $usernameOrEmail);
         // Bind the user input to the :login parameter
-        
-        
         // Execute the query
-    
-
+        $stmt->execute();
         // Fetch the matching user as an associative array
-    
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Check two conditions:
         // 1. A user record was found
@@ -51,18 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Regenerate the session ID for security
             // This helps prevent session fixation attacks
+            session_regenerate_id(true);
            
             // Store user information in session variables
             // These variables indicate the user is now logged in
-        
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
             // Redirect the user to the protected orders page
-           
+            header("Location: orders.php");
 
             // Stop the script immediately after redirecting
-
+            exit;
 
         } else {
-
+            $error = 'login failed';
             // If login fails, display an error message
            
         }
@@ -108,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary">Login</button>
 
         <!-- Link to registration page -->
-        <a href="signup.php" class="btn btn-secondary">Create Account</a>
+        <a href="register.php" class="btn btn-secondary">Create Account</a>
     </form>
 </main>
 
