@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();//if existing session already, will resume that session
 
 // Prevent standard browser/proxy caching
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
