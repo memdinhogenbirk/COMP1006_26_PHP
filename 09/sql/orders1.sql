@@ -1,4 +1,4 @@
-CREATE TABLE orders3 (
+CREATE TABLE orders2 (
   customer_id INT AUTO_INCREMENT PRIMARY KEY,
 
   first_name VARCHAR(100) NOT NULL,
