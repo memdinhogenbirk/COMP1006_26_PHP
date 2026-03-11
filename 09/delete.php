@@ -19,7 +19,7 @@ if (!isset($_GET['id'])) {
 $customerId = $_GET['id'];
 
 // Delete query (customer_id is the primary key)
-$sql = "DELETE FROM orders1 WHERE customer_id = :customer_id";
+$sql = "DELETE FROM orders2 WHERE customer_id = :customer_id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':customer_id', $customerId);
 $stmt->execute();
