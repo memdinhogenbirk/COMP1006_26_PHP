@@ -1,3 +1,5 @@
-<?php require 'connect.php'
+<?php 
+require 'includes/connect.php';
+require 'includes/header.php';
 
 ?>

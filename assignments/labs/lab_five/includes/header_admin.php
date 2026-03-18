@@ -4,19 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bake It Til You Make It!  </title>
+    <title>Photo Slop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="styles/main.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1 class="site-title">
-            <img
-                src="assets/bitumi.png"
-                alt="Bake It Til You Make It Bakery"
-                class="logo">
-        </h1>
+        <h1 class="site-title">PHOTO SLOP</h1>
         <!-- Bootstrap Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
