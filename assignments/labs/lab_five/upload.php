@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //detect the real MIME TYPE of the uploaded file
             $detectedType = mime_content_type($userImage['tmp_name']);
             if(!in_array($detectedType, $allowedType, true)){
-                $errors[] = "Only accepts .jpg, .jpeg, .png, .webp file types";
+                $errors[] = "Accepted File Types: .jpg, .jpeg, .png, .webp";
             }
             else{
                 //get the file extension
@@ -102,4 +102,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </main>
 
-<?php require "footer.php"; ?>
+<?php require "includes/footer.php"; ?>
