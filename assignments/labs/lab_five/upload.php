@@ -13,7 +13,7 @@ $errors = [];
 
 // Success message
 $success = "";
-
+$currentUser = $_SESSION["user_id"];
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -56,12 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // If there are no errors, insert the product into the database
     if (empty($errors)) {
-        $sql = "INSERT INTO filepaths (filePath)
-                VALUES (:filePath)";
+        $sql = "INSERT INTO filepaths (filePath, user_id)
+                VALUES (:filePath, :user_id)";
 
         $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':filePath', $filePath);
-        $stmt->execute();
+        $stmt->execute([':filePath' => $filePath,':user_id'=> $currentUser]);
 
         $success = "Image added successfully!";
     }

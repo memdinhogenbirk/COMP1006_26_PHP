@@ -9,7 +9,8 @@ if(!isset($_SESSION['user_id'])){
     </main>';
 }
 else{
-    header("Location: upload.php");
+    $currentUser = $_SESSION["user_id"];
+    $sql = 'SELECT filePath FROM filePaths WHERE user_id = :user_id';
 }
 
 ?>
