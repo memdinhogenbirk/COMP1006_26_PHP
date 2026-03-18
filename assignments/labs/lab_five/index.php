@@ -1,6 +1,7 @@
 <?php 
 require 'includes/connect.php';
-if(session_status() === PHP_SESSION_NONE){
+session_start();
+if(!isset($_SESSION['user_id'])){
     require 'includes/header.php';
     echo'<main>
         <h1>Welcome to PHOTO SLOP</h1>
