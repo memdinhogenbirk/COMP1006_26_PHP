@@ -42,6 +42,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     //Add Code Here 
 
+    //check if a file is uploaded
+    if(isset($_FILES['product_image'])&& $_FILES['product_image']['error'] !== UPLOAD_ERR_NO_FILE){
+        if($_FILES['product_image']['error'] !== UPLOAD_ERR_OK){
+            $errors[] = "There was a problem uploading the image";
+        }
+        else{
+        //only allow .jpg,.jpeg,.png,.webp
+            $allowedType = ['image/jpeg','image/jpg','image/png','image/webp'];
+            //detect the real MIME TYPE of the uploaded file
+            $detectedType = mime_content_type($_FILES['product_image']['tmp_name']);
+            if(!in_array($detectedType, $allowedType, true)){
+                $errors[] = "Only accepts .jpg, .jpeg, .png, .webp file types";
+            }
+            else{
+                //get the file extension
+                $extension = pathinfo($_FILES['product_image']['name'], PATHINFO_EXTENSION);
+                //create a unique name so files don't overwrite
+                $safeFilename = uniqid('product_', true). '.'.strtolower($extension);
+                //create path to file storage location
+                $destination = __DIR__.'/uploads/'.$safeFilename;
+                //move from temp storage to uploads folder
+                if(move_uploaded_file($_FILES['[product_image']['tmp_name'], $destination)){
+                    //save path to database
+                    $imagePath = 'uploads/'.$safeFilename;
+                }
+                else{
+                    $errors[] = "Image Upload Failed";
+                }
+            }
+        }
+    }
+
     // If there are no errors, insert the product into the database
     if (empty($errors)) {
         $sql = "INSERT INTO products (name, description, price, image_path)
