@@ -1,3 +1,3 @@
 <footer>
-    <p> Bake It Til You Make It - COMP1006 </p>
+    <p><small>COPYRIGHT ME</small></p>
   </footer>
