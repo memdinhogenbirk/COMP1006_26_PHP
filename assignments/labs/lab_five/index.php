@@ -23,10 +23,12 @@ else{
     ?>
     <main>
         <h1><?= htmlspecialchars($userName['username']);?>'s Photos</h1>
+        <div>
         <?php if($photos !== [])foreach($photos as $photo):?>
-            <img src='<?= htmlspecialchars($photo['filePath']) ?>'/>
+            <img src='<?= htmlspecialchars($photo['filePath']) ?>' class="w-25"/>
         <?php endforeach;
         else echo"<p>You don't have any photos yet. Want to <a href='upload.php'>UPLOAD</a>?</p>";?>
+        </div>
     </main>
 <?php } ?>
 
