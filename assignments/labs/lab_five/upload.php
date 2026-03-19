@@ -18,7 +18,7 @@ $currentUser = $_SESSION["user_id"];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // super global files image variable
-    $userImage = $_FILES['user_image'];
+    $userImage = $_FILES['user_image'];//saved to variable for efficiency
     // This will store the image path for the database
     $filePath = null;
 

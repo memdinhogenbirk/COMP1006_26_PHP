@@ -34,7 +34,23 @@ else{
 
 <?php require "includes/footer.php"; ?>
 <!--
-What is the purpose of the $_FILES superglobal in PHP? 
+What is the purpose of the $_FILES superglobal in PHP?
+
+An array variable which contains:
+- the original name of the file, 
+- the type of file (MIME type), 
+- the size of the file, 
+- the temporary file name (stored serverside before ending up at its final destination)
+- an error code to indicate if upload was successful
+- the full path (a relative path submitted by the browser, vardumping this shows the path is identical to the file name, unsure if this
+  is always the case)
+  
+As indicated by the name, $_FILES can contain multiple files at once.
+It requires the form method post.
+
+Ultimately it's purpose is to store file information serverside before the file/files are uploaded, 
+making it possible to validate said info prior to finalizing the upload
+
 Why does a form need special settings to upload files? 
 What function is used to move uploaded files to a folder? 
 Why is it important to control where uploaded files are stored?
