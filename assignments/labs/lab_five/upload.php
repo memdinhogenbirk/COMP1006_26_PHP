@@ -62,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare($sql);
         $stmt->execute([':filePath' => $filePath,':user_id'=> $currentUser]);
 
+        $currentUser = $_SESSION["user_id"];
+        $sql = 'SELECT filePath FROM filePaths WHERE user_id = :user_id ORDER BY file_id DESC LIMIT 1';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':user_id'=>$currentUser]);
+        $photo = $stmt->fetch();
+
         $success = "Image added successfully!";
     }
 }
@@ -84,6 +90,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if ($success !== ""): ?>
         <div class="alert alert-success">
             <?= htmlspecialchars($success); ?>
+        </div>
+        <div>
+            <img src='<?= htmlspecialchars($photo["filePath"]) ?>'class="w-50"/>
         </div>
     <?php endif; ?>
     <!--enctype="multipart/form-data" required for uploads, will not send properly if not included -->

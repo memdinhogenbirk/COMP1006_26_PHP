@@ -31,3 +31,9 @@ else{
 <?php } ?>
 
 <?php require "includes/footer.php"; ?>
+<!--
+What is the purpose of the $_FILES superglobal in PHP? 
+Why does a form need special settings to upload files? 
+What function is used to move uploaded files to a folder? 
+Why is it important to control where uploaded files are stored?
+-->
