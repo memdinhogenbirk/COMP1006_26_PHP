@@ -1,4 +1,7 @@
 <?php
+/*another airlifted page, nothing tweaked from lesson here*/
+
+
 // Include the database connection so we can interact with the users table
 require "includes/connect.php";
 

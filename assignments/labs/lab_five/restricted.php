@@ -1,4 +1,6 @@
 <?php require_once 'includes/header.php' ?>
+<!--airlifted from lesson, nothing tweaked here
+page is triggered by auth.php finding no user_id in the session-->
 
 <body>
     <main class="container restricted text-center">

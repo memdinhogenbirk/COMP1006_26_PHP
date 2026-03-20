@@ -1,4 +1,7 @@
 <?php
+/*airlifted from lesson, nothing tweaked here
+kills the current session, $_SESSION no longer contains username or id*/
+
 // logout.php
 // ------------------------------------------------------------
 // This page logs the user out by destroying their session

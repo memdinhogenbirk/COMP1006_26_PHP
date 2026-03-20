@@ -1,4 +1,5 @@
 <?php
+/*airlifted from lesson, checks if there is a user_id present in the session, if not, go to restricted page*/
 session_start();
 
 // Prevent standard browser/proxy caching
