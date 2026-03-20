@@ -24,12 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // super global files image variable
     $userImage = $_FILES['user_image'];//saved to variable for efficiency
-
+    
     // This will store the image path for the database
     $filePath = null;
 
     //check if a file is uploaded
     if(isset($userImage)&& $userImage['error'] !== UPLOAD_ERR_NO_FILE){
+        var_dump($emptyInputCheck);
         if($userImage['error'] !== UPLOAD_ERR_OK){
             $errors[] = "There was a problem uploading the image";
         }
@@ -67,6 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
         }
+    }
+    else{
+        $errors[]="No File was selected";
     }
 
     // If there are no errors, insert the product into the database
@@ -108,7 +112,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!--successful upload block-->
     <?php if ($success !== ""): ?>
         <div class="alert alert-success">
-            <?= htmlspecialchars($success); ?>
+            <?= htmlspecialchars($success);?>
+            
         </div>
         <div>
             <img src='<?= htmlspecialchars($photo["filePath"]) ?>'class="w-50"/><!--display the photo that was just uploaded-->
@@ -124,6 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="user_image"
             class="form-control mb-4"
             accept=".jpg,.jpeg,.png,.webp"
+            
         >
 
         <button type="submit" class="btn btn-primary">Upload Image</button>
