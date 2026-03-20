@@ -23,7 +23,7 @@ else{//there is a user logged in
     $userName = $stmt2->fetch();
     ?>
     <main>
-        <h1><?= htmlspecialchars($userName['username']);?>'s Photos</h1><!--display user's username-->
+        <h2 class="text-center border-bottom border-2"><?= htmlspecialchars($userName['username']);?>'s Photos</h2><!--display user's username-->
         <div>
         <?php if($photos !== [])foreach($photos as $photo):?><!--display all of their photos-->
             <img src='<?= htmlspecialchars($photo['filePath']) ?>' class="w-25"/>

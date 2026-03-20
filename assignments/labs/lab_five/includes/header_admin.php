@@ -11,30 +11,16 @@
 
 <body>
     <header>
-        <h1 class="site-title">PHOTO SLOP</h1>
+        <h1 class="fw-bold site-title text-center">PHOTO SLOP</h1>
         <!-- Bootstrap Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
 
-            <div class="container">
-
-                <!-- Mobile menu toggle button -->
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#mainNav"
-                    aria-controls="mainNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-
-                </button>
+            <div class="container justify-content-center">
 
                 <!-- Navigation Links -->
-                <div class="collapse navbar-collapse" id="mainNav">
+                <div class="d-flex justify-content-center" id="mainNav">
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav justify-content-center">
 
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Home</a>
