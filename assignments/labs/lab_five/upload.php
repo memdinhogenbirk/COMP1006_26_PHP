@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // If there are no errors, insert the product into the database
     if (empty($errors)) {
-        $sql = "INSERT INTO filepaths (filePath, user_id)
+        $sql = "INSERT INTO filePaths (filePath, user_id)
                 VALUES (:filePath, :user_id)";
 
         $stmt = $pdo->prepare($sql);

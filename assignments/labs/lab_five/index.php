@@ -12,6 +12,7 @@ if(!isset($_SESSION['user_id'])){//check that session has a user_id, if not, no 
 else{//there is a user logged in
     require 'includes/header_admin.php';//display admin header(should probably be renamed to user header, and admin should be its own entity)
     $currentUser = $_SESSION["user_id"];//save current session user_id to a variable
+    
     $sql = 'SELECT filePath FROM filePaths WHERE user_id = :user_id';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':user_id'=>$currentUser]);//bind user id variable to named placeholder
