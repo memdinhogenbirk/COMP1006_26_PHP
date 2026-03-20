@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             name="user_image"
             class="form-control mb-4"
             accept=".jpg,.jpeg,.png,.webp"
-            
+            required
         >
 
         <button type="submit" class="btn btn-primary">Upload Image</button>
